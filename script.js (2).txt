@@ -1,0 +1,16 @@
+document.getElementById("join-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdRVmIqiKGigaHAYLcmsAwCcRx2uMGsao_Z4y016iT0egFf7A/formResponse";
+
+  const formData = new FormData(this);
+
+  fetch(formURL, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors"
+  });
+
+  alert("Thanks! Your information has been submitted.");
+  this.reset();
+});
